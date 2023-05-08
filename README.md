@@ -74,4 +74,4 @@ W. Yao, H. G. de Marina, B. Lin and M. Cao, **"Singularity-Free Guiding Vector F
 ```
 
 # Credits
-The spline curve interpolation library used was mainly adapted from the contribution of Tino Kluge (https://kluge.in-chemnitz.de/opensource/spline/).
+This package is a ROS adaptation of the original gvf-parametric code from the free open source autopilot software package [Paparazzi](https://github.com/paparazzi/paparazzi). The spline curve interpolation library used was mainly adapted from the contribution of Tino Kluge (https://kluge.in-chemnitz.de/opensource/spline/).
