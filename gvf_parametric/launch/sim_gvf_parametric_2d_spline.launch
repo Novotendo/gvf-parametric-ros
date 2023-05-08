@@ -1,0 +1,42 @@
+<launch>
+
+    <arg name="kx" default="1.4" />
+    <arg name="ky" default="1.4" />
+    <arg name="kpsi" default="1.0" />
+    <arg name="L" default="0.15" />
+    <arg name="beta" default="0.15" />
+    <arg name="s" default="1" />
+    <arg name="perpetual" default="1" />
+    <arg name="ground_speed" default="0.2" />
+    <arg name="lim_angular_speed" default="1.7" />
+    <arg name="rviz_gvfp_slice_limit" default="4.0" />
+    <arg name="world_frame" default="odom" />
+
+    <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_empty_world.launch">
+        <arg name="x_pos" default="-2.0"/>
+        <arg name="y_pos" default="-1.0"/>
+    </include>
+
+    <node name="gvf_parametric_control_2d_spline_node" pkg="gvf_parametric" type="gvf_parametric_control_2d_spline_node" output="screen" args="-alsologtostderr">
+        <remap from="/odometry" to="/odom" />
+        <remap from="/transform" to="/" /> 
+        <remap from="/command_velocity" to="/cmd_vel" />
+        <remap from="/trajectory" to="/path" />
+        <param name="world_frame" value="$(arg world_frame)" />
+        <param name="kx" value="$(arg kx)" />
+        <param name="ky" value="$(arg ky)" />
+        <param name="kpsi" value="$(arg kpsi)" />
+        <param name="s" value="$(arg s)" />    
+        <param name="perpetual" value="$(arg perpetual)" /> 
+        <param name="L" value="$(arg L)" />
+        <param name="beta" value="$(arg beta)" /> 
+        <param name="ground_speed" value="$(arg ground_speed)" />   
+        <param name="rviz_gvfp_slice_limit" value="$(arg rviz_gvfp_slice_limit)" />  
+        <param name="lim_angular_speed" value="$(arg lim_angular_speed)" />     
+    </node>
+
+    <node name="TEST_trajectory_pub_node" pkg="gvf_parametric" type="TEST_trajectory_pub_node" output="screen" args="-alsologtostderr" />
+
+    <node type="rviz" name="rviz" pkg="rviz" args="-d $(find gvf_parametric)/src/rviz/gvf_param_spline.rviz" />
+
+</launch>
