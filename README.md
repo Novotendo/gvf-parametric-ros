@@ -31,6 +31,7 @@ $ catkin config --merge-devel
 2. Get the turtlebot simulator and additional dependencies:
 ```
 $ cd ~/catkin_ws/src
+$ git clone git@github.com:ROBOTIS-GIT/turtlebot3.git
 $ git clone git@github.com:ROBOTIS-GIT/turtlebot3_simulations.git
 $ git clone git@github.com:catkin/catkin_simple.git
 ```
