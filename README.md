@@ -16,7 +16,7 @@ This package is a **singularity-free guiding vector field for robot navigation**
 
 Installation Instructions - Ubuntu 18.04 with ROS Melodic
 ---------------------------------------------------------
-To use this package, please install first ![ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu/). In addition, you will also need the ![catkin-tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) package. Then, you can continue the gvf-parametric package installation as follows:
+To use this package, please install first [ROS Melodic](http://wiki.ros.org/melodic/Installation/Ubuntu/). In addition, you will also need the [catkin-tools](https://catkin-tools.readthedocs.io/en/latest/installing.html) package. Then, you can continue the gvf-parametric package installation as follows:
 
 1. If you don't have a ROS workspace yet you can do so by:
 ```
